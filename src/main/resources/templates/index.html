@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simple Banking System</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="card">
+    <h2>🏦 Simple Banking System</h2>
+
+    <p><b>Account Holder:</b>
+        <span th:text="${account.accountHolderName}"></span>
+    </p>
+
+    <p><b>Account Number:</b>
+        <span th:text="${account.accountNumber}"></span>
+    </p>
+
+    <div class="balance">
+        ₹ <span th:text="${account.balance}"></span>
+    </div>
+
+    <form action="/deposit" method="post">
+        <input type="number" step="0.01" name="amount"
+               placeholder="Deposit Amount" required>
+        <button class="deposit">Deposit</button>
+    </form>
+
+    <form action="/withdraw" method="post">
+        <input type="number" step="0.01" name="amount"
+               placeholder="Withdraw Amount" required>
+        <button class="withdraw">Withdraw</button>
+    </form>
+</div>
+
+</body>
+</html>

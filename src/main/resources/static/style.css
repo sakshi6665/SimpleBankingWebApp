@@ -1,0 +1,167 @@
+/* Reset & base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bgMove 8s ease infinite;
+}
+
+/* Subtle animated background */
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main card */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    width: 380px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    animation: fadeIn 0.8s ease;
+}
+
+/* Smooth entry */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+.card h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Account info */
+.card p {
+    margin: 6px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Balance display */
+.balance {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #27ae60;
+    background: #ecf9f1;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Message (success / error) */
+.message {
+    margin: 10px 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Deposit button */
+.deposit {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+
+.deposit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(39, 174, 96, 0.5);
+}
+
+/* Withdraw button */
+.withdraw {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+}
+
+.withdraw:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(231, 76, 60, 0.5);
+}
+
+/* Create account button uses deposit style */
+button.deposit {
+    margin-top: 20px;
+}
+
+/* Mobile friendly */
+@media (max-width: 420px) {
+    .card {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    .balance {
+        font-size: 24px;
+    }
+}
+.history {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.history li {
+    background: #f4f6f8;
+    margin-bottom: 6px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #2c3e50;
+}
